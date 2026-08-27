@@ -1,4 +1,4 @@
-name: Deploy Express Brews to GitHub Pages
+name: Deploy Express Brews
 
 on:
   push:
@@ -12,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -21,10 +21,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: yarn
@@ -34,15 +34,15 @@ jobs:
         working-directory: frontend
         run: yarn install --frozen-lockfile
 
-      - name: Build React app
+      - name: Build website
         working-directory: frontend
         run: yarn build
 
-      - name: Setup Pages
+      - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload build
-        uses: actions/upload-pages-artifact@v4
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
         with:
           path: frontend/build
 
