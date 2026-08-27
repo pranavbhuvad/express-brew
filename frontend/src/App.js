@@ -37,7 +37,7 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/express-brew">
       <ScrollManager />
       <div className="App bg-cream font-body text-espresso">
         <a
@@ -47,6 +47,7 @@ function App() {
         >
           Skip to content
         </a>
+
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/menu" element={<MenuPage />} />
