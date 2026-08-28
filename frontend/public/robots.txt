@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://3697fc62-c098-40e4-8b6c-e8da56d5f505.preview.emergentagent.com/sitemap.xml
+Sitemap: https://pranavbhuvad.github.io/express-brew/sitemap.xml
